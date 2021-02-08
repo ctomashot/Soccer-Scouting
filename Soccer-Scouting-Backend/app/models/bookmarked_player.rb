@@ -1,0 +1,2 @@
+class BookmarkedPlayer < ApplicationRecord
+end
