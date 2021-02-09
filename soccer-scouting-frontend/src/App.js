@@ -1,25 +1,32 @@
 import logo from './logo.svg';
 import './App.css';
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import Players from './components/Players'
+import Teams from './components/Teams'
+import Navbar from './components/Navbar'
+import Bookmarked from './components/Bookmarked'
 
-function App() {
+class App extends React.Component {
+  componentDidMount(){
+    
+  }
+
+  render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      <Navbar />
+      <Switch>
+        <Route path ='/' component={Bookmarked} exact/>
+        <Route path ='/players' component={Players}/>
+        <Route path ='/teams' component={Teams}/>
+        <Route component={Error} />
+      </Switch>
+    </main>
   );
+  }
 }
 
 export default App;
