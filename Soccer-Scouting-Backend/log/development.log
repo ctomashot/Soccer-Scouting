@@ -2222,3 +2222,207 @@ No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age:
 Completed 200 OK in 100ms (Views: 94.4ms | ActiveRecord: 2.6ms | Allocations: 59294)
 
 
+Started GET "/players" for ::1 at 2021-02-09 18:03:21 -0600
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (64.36ms)
+Completed 200 OK in 104ms (Views: 96.0ms | ActiveRecord: 2.7ms | Allocations: 59294)
+
+
+Started GET "/favicon.ico" for ::1 at 2021-02-09 18:10:37 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players" for ::1 at 2021-02-09 18:10:39 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (38.18ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 1.3ms | Allocations: 46607)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:30:37 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (32.38ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 1.3ms | Allocations: 46546)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:31:09 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (40.58ms)
+Completed 200 OK in 49ms (Views: 47.0ms | ActiveRecord: 1.8ms | Allocations: 46559)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:32:32 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (63.81ms)
+Completed 200 OK in 105ms (Views: 95.5ms | ActiveRecord: 4.8ms | Allocations: 59296)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:34:54 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (2.5ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (84.33ms)
+Completed 200 OK in 99ms (Views: 95.9ms | ActiveRecord: 2.5ms | Allocations: 46559)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:35:03 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (46.26ms)
+Completed 200 OK in 60ms (Views: 57.9ms | ActiveRecord: 1.4ms | Allocations: 46562)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:35:04 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (41.18ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 1.3ms | Allocations: 46559)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:07 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (37.47ms)
+Completed 200 OK in 44ms (Views: 42.4ms | ActiveRecord: 1.8ms | Allocations: 46541)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:09 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.6ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (48.65ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 1.6ms | Allocations: 46545)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:09 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (42.08ms)
+Completed 200 OK in 47ms (Views: 45.9ms | ActiveRecord: 1.3ms | Allocations: 46541)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:11 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (27.41ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 1.3ms | Allocations: 46541)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:13 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (37.25ms)
+Completed 200 OK in 42ms (Views: 40.3ms | ActiveRecord: 1.0ms | Allocations: 46544)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:13 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (45.56ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 2.1ms | Allocations: 46559)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:36:17 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (38.06ms)
+Completed 200 OK in 43ms (Views: 41.8ms | ActiveRecord: 1.2ms | Allocations: 46541)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:38:48 -0600
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (43.5ms)
+Completed 200 OK in 49ms (Views: 47.5ms | ActiveRecord: 1.4ms | Allocations: 46543)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:41:33 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (42.96ms)
+Completed 200 OK in 48ms (Views: 46.1ms | ActiveRecord: 1.2ms | Allocations: 46541)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:42:16 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (34.22ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 1.1ms | Allocations: 46541)
+
+
+Started GET "/players" for ::1 at 2021-02-09 18:42:19 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (52.47ms)
+Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 1.8ms | Allocations: 46544)
+
+
