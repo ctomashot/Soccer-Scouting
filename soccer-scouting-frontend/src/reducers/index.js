@@ -3,6 +3,5 @@ import playersReducer from './players'
 import loadingReducer from './loading'
 
 export default combineReducers({
-    players: playersReducer,
-    loading: loadingReducer
+    players: playersReducer
 })
