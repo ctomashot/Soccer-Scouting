@@ -2426,3 +2426,799 @@ No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age:
 Completed 200 OK in 59ms (Views: 56.7ms | ActiveRecord: 1.8ms | Allocations: 46544)
 
 
+Started GET "/players" for ::1 at 2021-02-09 18:45:46 -0600
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.5ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (65.29ms)
+Completed 200 OK in 103ms (Views: 95.7ms | ActiveRecord: 3.6ms | Allocations: 59296)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:28:43 -0600
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlayersController#index as HTML
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (63.26ms)
+Completed 200 OK in 100ms (Views: 93.5ms | ActiveRecord: 2.9ms | Allocations: 59294)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:28:49 -0600
+Processing by TeamsController#index as HTML
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.14ms)
+Completed 200 OK in 35ms (Views: 29.4ms | ActiveRecord: 2.2ms | Allocations: 18600)
+
+
+Started GET "/bookmarked" for ::1 at 2021-02-09 19:38:28 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/bookmarked"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.7) lib/puma/configuration.rb:228:in `call'
+puma (4.3.7) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.7) lib/puma/server.rb:472:in `process_client'
+puma (4.3.7) lib/puma/server.rb:328:in `block in run'
+puma (4.3.7) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/players" for ::1 at 2021-02-09 19:40:32 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:40:32 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+Processing by TeamsController#index as */*
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (35.43ms)
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 47ms (Views: 45.0ms | ActiveRecord: 1.8ms | Allocations: 47925)
+
+
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (6.52ms)
+Completed 200 OK in 48ms (Views: 47.3ms | ActiveRecord: 0.6ms | Allocations: 49577)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:40:47 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:40:47 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (35.89ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.74ms)
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 1.3ms | Allocations: 52554)
+
+
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 1.0ms | Allocations: 51396)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:41:40 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:41:40 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.11ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (46.67ms)
+Completed 200 OK in 62ms (Views: 61.6ms | ActiveRecord: 0.5ms | Allocations: 52547)
+
+
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 1.3ms | Allocations: 52311)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:42:09 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:42:09 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (33.23ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.41ms)
+Completed 200 OK in 46ms (Views: 44.3ms | ActiveRecord: 1.2ms | Allocations: 52544)
+
+
+Completed 200 OK in 44ms (Views: 42.7ms | ActiveRecord: 0.9ms | Allocations: 51390)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:43:27 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:43:27 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.3ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.18ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (29.75ms)
+Completed 200 OK in 41ms (Views: 39.8ms | ActiveRecord: 0.8ms | Allocations: 52545)
+
+
+Completed 200 OK in 39ms (Views: 37.7ms | ActiveRecord: 1.3ms | Allocations: 52309)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:46:34 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:46:34 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mPlayer Load (2.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  ↳ app/controllers/players_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (6.35ms)
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+Completed 200 OK in 17ms (Views: 15.7ms | ActiveRecord: 0.5ms | Allocations: 9281)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (38.98ms)
+Completed 200 OK in 55ms (Views: 52.8ms | ActiveRecord: 2.0ms | Allocations: 52454)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:46:36 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:46:36 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.8ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (5.21ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (29.76ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.5ms | Allocations: 52544)
+
+
+Completed 200 OK in 43ms (Views: 40.8ms | ActiveRecord: 1.8ms | Allocations: 52308)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:54:32 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (7.6ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.8ms | Allocations: 6029)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:11 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.91ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.8ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:16 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (6.63ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:19 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (5.27ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:50 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (5.86ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 1.3ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:54 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (7.41ms)
+Completed 200 OK in 11ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:56 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (9.3ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 1.0ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:55:58 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (6.31ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:56:03 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.51ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 6026)
+
+
+Started GET "/teams" for ::1 at 2021-02-09 19:56:07 -0600
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (16.33ms)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.7ms | Allocations: 6029)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:56:26 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:56:26 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+Processing by TeamsController#index as */*
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (34.33ms)
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 2.1ms | Allocations: 48141)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.46ms)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.5ms | Allocations: 50860)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:56:33 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:56:33 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (29.09ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.01ms)
+Completed 200 OK in 42ms (Views: 40.4ms | ActiveRecord: 1.1ms | Allocations: 52544)
+
+
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.5ms | Allocations: 51390)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:56:41 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:56:41 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (44.78ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.98ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 1.1ms | Allocations: 52244)
+
+
+Completed 200 OK in 59ms (Views: 58.3ms | ActiveRecord: 0.5ms | Allocations: 52614)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:57:46 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:57:46 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.3ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (26.67ms)
+Completed 200 OK in 39ms (Views: 38.2ms | ActiveRecord: 0.5ms | Allocations: 52544)
+
+
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 1.4ms | Allocations: 52308)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:57:50 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:57:50 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.35ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (32.9ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.6ms | Allocations: 52544)
+
+
+Completed 200 OK in 43ms (Views: 42.0ms | ActiveRecord: 1.0ms | Allocations: 52308)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:57:56 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:57:56 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (6.88ms)
+Completed 200 OK in 58ms (Views: 56.8ms | ActiveRecord: 0.8ms | Allocations: 51327)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (45.06ms)
+Completed 200 OK in 61ms (Views: 59.6ms | ActiveRecord: 1.4ms | Allocations: 52810)
+
+
+Started GET "/players" for ::1 at 2021-02-09 19:57:57 -0600
+Started GET "/teams" for ::1 at 2021-02-09 19:57:57 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (0.9ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (2.98ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (27.08ms)
+Completed 200 OK in 36ms (Views: 35.6ms | ActiveRecord: 0.5ms | Allocations: 52544)
+
+
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.9ms | Allocations: 52308)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:04:01 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:04:01 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+Processing by PlayersController#index as */*
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  ↳ app/controllers/players_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.58ms)
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.8ms | Allocations: 9617)
+
+
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (44.64ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 1.4ms | Allocations: 51781)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:05:10 -0600
+Processing by PlayersController#index as */*
+Started GET "/teams" for ::1 at 2021-02-09 20:05:10 -0600
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+Processing by TeamsController#index as */*
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (33.97ms)
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 1.1ms | Allocations: 47853)
+
+
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (5.53ms)
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.9ms | Allocations: 49551)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:05:49 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:05:49 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+Processing by TeamsController#index as */*
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (48.54ms)
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 1.2ms | Allocations: 47863)
+
+
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.77ms)
+Completed 200 OK in 58ms (Views: 57.1ms | ActiveRecord: 1.0ms | Allocations: 49554)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:05:55 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:05:55 -0600
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (45.14ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 1.0ms | Allocations: 46545)
+
+
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (17.02ms)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 1.6ms | Allocations: 6026)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:07:53 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:07:53 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (3.2ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (69.25ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.54ms)
+Completed 200 OK in 87ms (Views: 83.9ms | ActiveRecord: 3.2ms | Allocations: 52551)
+
+
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.5ms | Allocations: 51393)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:07:59 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:07:59 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.93ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (31.03ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 1.0ms | Allocations: 51323)
+
+
+Completed 200 OK in 46ms (Views: 44.4ms | ActiveRecord: 1.4ms | Allocations: 52611)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:09:00 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:09:00 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.2ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (32.5ms)
+Completed 200 OK in 48ms (Views: 47.0ms | ActiveRecord: 0.5ms | Allocations: 52544)
+
+
+Completed 200 OK in 47ms (Views: 45.2ms | ActiveRecord: 1.4ms | Allocations: 52308)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:09:31 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:09:31 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (4.16ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (42.72ms)
+Completed 200 OK in 57ms (Views: 56.5ms | ActiveRecord: 0.5ms | Allocations: 52547)
+
+
+Completed 200 OK in 56ms (Views: 55.1ms | ActiveRecord: 1.0ms | Allocations: 52311)
+
+
+Started GET "/players" for ::1 at 2021-02-09 20:11:26 -0600
+Started GET "/teams" for ::1 at 2021-02-09 20:11:26 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (1.7ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.39ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (29.29ms)
+Completed 200 OK in 43ms (Views: 42.1ms | ActiveRecord: 0.5ms | Allocations: 52544)
+
+
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 1.7ms | Allocations: 52308)
+
+
+Started GET "/bookmarked_players" for ::1 at 2021-02-09 20:16:20 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BookmarkedPlayersController#index as HTML
+  [1m[36mBookmarkedPlayer Load (0.5ms)[0m  [1m[34mSELECT "bookmarked_players".* FROM "bookmarked_players" ORDER BY created_at DESC[0m
+  ↳ app/controllers/bookmarked_players_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.13ms)
+Completed 200 OK in 13ms (Views: 7.8ms | ActiveRecord: 1.3ms | Allocations: 3133)
+
+
+Started GET "/teams" for ::1 at 2021-02-10 14:06:10 -0600
+Started GET "/teams" for ::1 at 2021-02-10 14:06:10 -0600
+Started GET "/players" for ::1 at 2021-02-10 14:06:10 -0600
+Started GET "/players" for ::1 at 2021-02-10 14:06:10 -0600
+  [1m[35m (66.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TeamsController#index as */*
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+Processing by PlayersController#index as */*
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+  [1m[36mPlayer Load (2.6ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mPlayer Load (2.0ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (9.4ms)
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (95.75ms)
+Completed 200 OK in 260ms (Views: 257.8ms | ActiveRecord: 2.0ms | Allocations: 121338)
+
+
+Completed 200 OK in 363ms (Views: 235.8ms | ActiveRecord: 2.8ms | Allocations: 40003)
+
+
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (61.61ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (13.75ms)
+Completed 200 OK in 397ms (Views: 299.3ms | ActiveRecord: 5.2ms | Allocations: 128513)
+
+
+Completed 200 OK in 300ms (Views: 299.1ms | ActiveRecord: 0.5ms | Allocations: 125479)
+
+
+Started GET "/players" for ::1 at 2021-02-10 14:18:32 -0600
+Started GET "/teams" for ::1 at 2021-02-10 14:18:32 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (1.4ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (37.85ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (5.17ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 1.4ms | Allocations: 52551)
+
+
+Completed 200 OK in 50ms (Views: 48.9ms | ActiveRecord: 0.5ms | Allocations: 51393)
+
+
+Started GET "/players" for ::1 at 2021-02-10 14:18:39 -0600
+Started GET "/teams" for ::1 at 2021-02-10 14:18:39 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (1.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (50.78ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (5.46ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 1.1ms | Allocations: 52562)
+
+
+Completed 200 OK in 67ms (Views: 65.6ms | ActiveRecord: 0.8ms | Allocations: 51408)
+
+
+Started GET "/players" for ::1 at 2021-02-10 14:18:56 -0600
+Started GET "/teams" for ::1 at 2021-02-10 14:18:56 -0600
+Processing by TeamsController#index as */*
+Processing by PlayersController#index as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (49.95ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.52ms)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 2.1ms | Allocations: 52244)
+
+
+Completed 200 OK in 64ms (Views: 63.8ms | ActiveRecord: 0.5ms | Allocations: 52614)
+
+
+Started GET "/players" for ::1 at 2021-02-10 14:19:09 -0600
+Started GET "/teams" for ::1 at 2021-02-10 14:19:09 -0600
+Processing by PlayersController#index as */*
+Processing by TeamsController#index as */*
+  [1m[36mPlayer Load (2.1ms)[0m  [1m[34mSELECT "players".* FROM "players" ORDER BY created_at DESC[0m
+  [1m[36mTeam Load (1.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY created_at DESC[0m
+  ↳ app/controllers/players_controller.rb:4:in `index'
+  ↳ app/controllers/teams_controller.rb:4:in `index'
+No serializer found for resource: #<Player id: 200, name: "Kamil Grosicki", age: 32, position: "Forward", team_id: 19, minutesPlayed: 149, appearances: 3, goals: 0, clean_sheets: 0, conceded: 5, assists: 1, yellow_cards: 0, red_cards: 0, penalty_goals: 0, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+No serializer found for resource: #<Team id: 20, teamId: 251, seasonGoals: 15, points: 11, ppg_overall: 0.478260869565217e0, seasonGoalDifference: -22, seasonWins_home: 2, seasonWins_away: 1, seasonDraws_home: 1, seasonDraws_away: 1, seasonLosses_home: 9, seasonLosses_away: 9, matchesPlayed: 23, name: "Sheffield United FC", position: 20, created_at: "2021-02-09 17:36:15", updated_at: "2021-02-09 17:36:15">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Player::ActiveRecord_Relation (37.97ms)
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Team::ActiveRecord_Relation (3.73ms)
+Completed 200 OK in 52ms (Views: 50.0ms | ActiveRecord: 2.1ms | Allocations: 52544)
+
+
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 1.1ms | Allocations: 51390)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20210208214542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (45.9ms)[0m  [1m[35mDROP TABLE "players"[0m
+  [1m[36mprimary::SchemaMigration Destroy (19.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210208214542"]]
+  [1m[35m (1534.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20210208214542)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "players" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "position" varchar, "team_id" integer, "minutesPlayed" integer, "appearances" integer, "goals" integer, "clean_sheets" integer, "conceded" integer, "assists" integer, "yellow_cards" integer, "red_cards" integer, "penalty_goals" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210208214542"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (33.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlayers (20210208214542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.6ms)[0m  [1m[35mDROP TABLE "players"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210208214542"]]
+  [1m[35m (5.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateTeams (20210208213754)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE "teams"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210208213754"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBookmarkedPlayers (20210208210835)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (10.8ms)[0m  [1m[35mDROP TABLE "bookmarked_players"[0m
+  [1m[36mprimary::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210208210835"]]
+  [1m[35m (903.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScouts (20210208202048)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (21.7ms)[0m  [1m[35mDROP TABLE "scouts"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210208202048"]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateScouts (20210208202048)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "scouts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "username" varchar, "password" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210208202048"]]
+  [1m[35m (5.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateBookmarkedPlayers (20210208210835)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "bookmarked_players" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "playerId" integer, "note" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210208210835"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateTeams (20210208213754)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "teams" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "teamId" integer, "seasonGoals" integer, "points" integer, "ppg_overall" decimal, "seasonGoalDifference" integer, "seasonWins_home" integer, "seasonWins_away" integer, "seasonDraws_home" integer, "seasonDraws_away" integer, "seasonLosses_home" integer, "seasonLosses_away" integer, "matchesPlayed" integer, "name" varchar, "position" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210208213754"]]
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlayers (20210208214542)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "players" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "age" integer, "position" varchar, "team_id" integer, "minutesPlayed" integer, "appearances" integer, "goals" integer, "clean_sheets" integer, "conceded" integer, "assists" integer, "yellow_cards" integer, "red_cards" integer, "penalty_goals" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210208214542"]]
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux'
 import playersReducer from './players'
-import loadingReducer from './loading'
+import teamsReducer from './teams'
 
 export default combineReducers({
-    players: playersReducer
+    players: playersReducer,
+    teams: teamsReducer
 })
