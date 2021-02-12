@@ -5,15 +5,6 @@ class TeamsCard extends React.Component {
     render(){
         return(
             <div>
-            <table >
-                <tr>
-                <th>Name</th>
-                <th>Points</th>
-                <th>Wins</th>
-                <th>Draws</th>
-                <th>Losses</th>
-                <th>Matches Played</th>
-            </tr>
             <tr>
                 <td>{this.props.name}</td>
                 <td>{this.props.points}</td>
@@ -22,8 +13,7 @@ class TeamsCard extends React.Component {
                 <td>{this.props.seasonLosses_home + this.props.seasonLosses_away}</td>
                 <td>{this.props.matchesPlayed}</td>
             </tr>
-
-            </table>        
+      
         </div>
         )
     }

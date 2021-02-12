@@ -6,11 +6,24 @@ class Players extends React.Component {
     render(){
     return(
         <div>
+            <input type="text" placeholder="Search"></input>
+            <table>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Position</th>
+                <th>Goals</th>
+                <th>Assists</th>
+                <th>Appearances</th>
+            </tr>
+            <tr>
             {
                 this.props.players.map(player => {
                     return <PlayersCard {...player} key={player.id} />
                 })
-            }     
+            } 
+            </tr>
+            </table>    
         </div>
     )
     }
