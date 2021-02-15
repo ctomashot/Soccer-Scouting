@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { connect } from 'react';
 import '../Login.css';
+import { loginSuccess } from '../actions/auth'
 
 class Login extends React.Component {
   state = {
     username: 'ctomashot',
-    password: '1234'
+    password: '1234',
+    error: ''
   }
 
   handleInputChange = (e) => {
@@ -25,17 +26,26 @@ class Login extends React.Component {
       body: JSON.stringify(this.state)
     }
 
-    fetch('http://localhost:4000/scouts', reqObj)
+    fetch('http://localhost:4000/api/v1/auth', reqObj)
     .then(resp => resp.json())
     .then(data => {
-
-    })
+      if(data.error){
+        this.setState({
+          error: data.error
+        })
+      } else{
+        this.props.loginSuccess(data)
+        this.props.history.push('/bookmarked')
+      }
+      }
+    )
   }
 
   render(){
   return(
     <div >
       <h1>Please Log In</h1>
+      {this.state.error ? <h4 style={{color: 'red'}}>this.state.error</h4> : null}
       <form onSubmit={this.handleSubmit}>
         <label>
           <p>Username</p>
@@ -54,4 +64,8 @@ class Login extends React.Component {
 }
 }
 
-export default Login
+mapDispatchToProps = {
+  loginSuccess: loginSuccess
+}
+
+export default connect(null, mapDispatchToProps)(Login)

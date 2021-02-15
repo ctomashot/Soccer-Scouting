@@ -64,6 +64,6 @@ end
 
 
 
-cole = Scout.create(name: "Cole", username: "ctomashot", password: "1234")
+cole = Scout.create(username: "ctomashot", password: "1234")
 
 testPlayer = BookmarkedPlayer.create(playerId: 600, note: "test note", scoutId: cole.id)

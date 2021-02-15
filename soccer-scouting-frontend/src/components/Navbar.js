@@ -1,16 +1,39 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
+import { currentScout } from '../actions/auth'
+import { logoutScout } from '../actions/auth'
 
 
-function Navbar() {
+class Navbar extends React.Component {
+    handleClick = () => {
+        this.props.logoutScout()
+    }
+    render(){
     return(
         <div>
             <Link to="/">Bookmarked </Link>
             <Link to="/players">Players </Link>
             <Link to="/teams">Teams </Link>
-            <Link to="/login">Login </Link>
+            {
+                this.props.currentScout ?
+                <Link to="/login" onClick={this.handleClick}>Logout </Link>
+                :
+                <Link to="/login">Login </Link>
+            }
         </div>
     )
+    }
 }
 
-export default Navbar;
+const mapStateToProps = (state) => {
+    return {
+        currentScout: state.currentScout
+    }
+}
+
+const mapDispatchToProps = {
+    logoutScout: logoutScout
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
