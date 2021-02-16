@@ -3,10 +3,12 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import { currentScout } from '../actions/auth'
 import { logoutScout } from '../actions/auth'
+import { bookmarked } from '../actions/auth'
 
 
 class Navbar extends React.Component {
     handleClick = () => {
+        localStorage.removeItem('jwt_token')
         this.props.logoutScout()
     }
     render(){

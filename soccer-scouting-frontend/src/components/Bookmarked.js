@@ -6,9 +6,27 @@ import bookmarked from '../reducers/bookmarked';
 
 class Bookmarked extends React.Component {
     componentDidMount(){
-        if(this.props.currentScout){
+        const token = localStorage.getItem('jwt_token')
+
+        if(!token) {
             this.props.history.push('/login')
+        } else {
+
+            const reqObj = {
+                method: 'GET',
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }
+
+            fetch('http://localhost:4000/api/v1/current_scout', reqObj)
+            .then(resp => resp.json())
+            .then(data => {
+                this.props.currentScout(data.scout)        
+            })            
         }
+
+
     }
 
     renderPlayers = () => {
@@ -38,4 +56,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Bookmarked);
+const mapDispatchToProps = {
+    currentScout: currentScout
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Bookmarked);

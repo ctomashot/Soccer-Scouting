@@ -5,8 +5,15 @@ export const loginSuccess = (scout) => {
     }
 }
 
+export const currentScout = (scout) => {
+    return {
+        type: 'CURRENT_SCOUT',
+        scout: scout
+    }
+}
+
 export const logoutScout = () => {
     return {
-        type: 'LOGOUT_USER'
+        type: 'LOGOUT_SCOUT'
     }
 }

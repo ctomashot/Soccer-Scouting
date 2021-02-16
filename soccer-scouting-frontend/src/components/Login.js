@@ -1,6 +1,9 @@
-import React, { connect } from 'react';
+import React from 'react';
 import '../Login.css';
 import { loginSuccess } from '../actions/auth'
+import {connect} from 'react-redux'
+import { currentScout } from '../actions/auth'
+import { logoutScout } from '../actions/auth'
 
 class Login extends React.Component {
   state = {
@@ -34,7 +37,8 @@ class Login extends React.Component {
           error: data.error
         })
       } else{
-        this.props.loginSuccess(data)
+        localStorage.seItem('jwt_token', data.token)
+        this.props.loginSuccess(data.scout)
         this.props.history.push('/bookmarked')
       }
       }
@@ -64,8 +68,10 @@ class Login extends React.Component {
 }
 }
 
-mapDispatchToProps = {
-  loginSuccess: loginSuccess
+
+const mapDispatchToProps = {
+    loginSuccess: loginSuccess
 }
 
-export default connect(null, mapDispatchToProps)(Login)
+
+export default connect(null, mapDispatchToProps)(Login);
