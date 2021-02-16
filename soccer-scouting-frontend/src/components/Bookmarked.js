@@ -1,5 +1,6 @@
-import React, { connect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import {connect} from 'react-redux'
 import '../Login.css';
 import { currentScout } from '../actions/auth'
 import bookmarked from '../reducers/bookmarked';
@@ -11,7 +12,8 @@ class Bookmarked extends React.Component {
         if(!token) {
             this.props.history.push('/login')
         } else {
-
+            if(!this.props.currentScout){
+                console.log('here')
             const reqObj = {
                 method: 'GET',
                 headers: {
@@ -22,8 +24,9 @@ class Bookmarked extends React.Component {
             fetch('http://localhost:4000/api/v1/current_scout', reqObj)
             .then(resp => resp.json())
             .then(data => {
+                console.log(data)
                 this.props.currentScout(data.scout)        
-            })            
+            })}            
         }
 
 
@@ -59,5 +62,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = {
     currentScout: currentScout
 }
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(Bookmarked);

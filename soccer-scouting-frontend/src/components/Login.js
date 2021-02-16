@@ -37,7 +37,7 @@ class Login extends React.Component {
           error: data.error
         })
       } else{
-        localStorage.seItem('jwt_token', data.token)
+        localStorage.setItem('jwt_token', data.token)
         this.props.loginSuccess(data.scout)
         this.props.history.push('/bookmarked')
       }

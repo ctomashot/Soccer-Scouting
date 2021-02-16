@@ -25,7 +25,7 @@ class ApplicationController < ActionController::API
     decoded_token.first['scout_id']
    end
 
-   def logged.in?
+   def logged_in?
     !!current_scout
    end
 end

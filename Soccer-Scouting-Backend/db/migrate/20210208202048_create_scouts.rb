@@ -3,7 +3,7 @@ class CreateScouts < ActiveRecord::Migration[6.0]
     create_table :scouts do |t|
       t.string :name
       t.string :username
-      t.string :password
+      t.string :password_digest
 
       t.timestamps
     end

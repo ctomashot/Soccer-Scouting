@@ -22,7 +22,6 @@ class App extends React.Component {
     fetch('http://localhost:4000/players')
     .then(resp => resp.json())
     .then(playersArr => {
-      console.log(playersArr)
       
         this.props.fetchPlayersSuccess(playersArr)
     })
@@ -32,8 +31,7 @@ class App extends React.Component {
     fetch('http://localhost:4000/teams')
     .then(resp => resp.json())
     .then(teamsArr => {
-      teamsArr.sort((a,b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0))
-      console.log(teamsArr)
+      teamsArr = teamsArr.sort((a,b) => (a.position > b.position) ? 1 : ((b.position > a.position) ? -1 : 0))
         this.props.fetchTeamsSuccess(teamsArr)
     })
   }
@@ -52,12 +50,8 @@ class App extends React.Component {
       <Route path="/teams">
         <Teams />
       </Route>
-      <Route path="/login">
-        <Login />
-      </Route>
-      <Route path="/">
-        <Bookmarked />
-      </Route>
+      <Route path="/login" component ={(props) => <Login{...props}/>}/>
+      <Route path="/" component ={(props) => <Bookmarked{...props}/>}/>
       </Switch>
     </Router>
   );
