@@ -6,9 +6,8 @@ class Teams extends React.Component {
     render(){
     return(
         <div>
-            <input type="text" placeholder="Search"></input>
             <table >
-                <tr>
+            <tr>
                 <th>Name</th>
                 <th>Points</th>
                 <th>Wins</th>
@@ -16,11 +15,13 @@ class Teams extends React.Component {
                 <th>Losses</th>
                 <th>Matches Played</th>
             </tr>
+           
             {
                 this.props.teams.map(team => {
                     return <TeamsCard {...team} key={team.id} />
                 })
             }  
+            
             </table>   
         </div>
     )

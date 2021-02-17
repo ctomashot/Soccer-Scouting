@@ -1,12 +1,38 @@
 import React from 'react'
 import { connect } from "react-redux";
 import PlayersCard from './PlayersCard'
+import { fetchPlayersSuccess } from '../actions/players'
+
 
 class Players extends React.Component {
+    state = {
+        inputValue: ''
+    }
+
+    playerFilterOnChange = (e) => {
+        this.setState({
+            inputValue: e.target.value
+        })
+    }
+
+    dynamicSearch = () => {
+        return this.props.players.filter(player => player.name.toLowerCase().includes(this.state.inputValue.toLowerCase()))
+    }
+
+    bookmarkPlayer = (e) =>{
+        const id = e.target.id
+        console.log(id)
+        this.props.fetchPlayersSuccess({players: this.props.players.filter(p => p.id === parseInt(id))})
+
+
+    }
+
+    
+
     render(){
     return(
         <div>
-            <input type="text" placeholder="Search"></input>
+            <input type="text" placeholder= "Search Player Names" value ={this.state.inputValue} onChange={this.playerFilterOnChange}></input>
             <table>
             <tr>
                 <th>Name</th>
@@ -16,17 +42,21 @@ class Players extends React.Component {
                 <th>Assists</th>
                 <th>Appearances</th>
             </tr>
-            <tr>
+            
             {
-                this.props.players.map(player => {
-                    return <PlayersCard {...player} key={player.id} />
+                this.dynamicSearch().map(player => {
+                    return <PlayersCard {...player} key={player.id} bookmarkPlayer={this.bookmarkPlayer}/>
                 })
             } 
-            </tr>
+            
             </table>    
         </div>
     )
     }
+}
+
+const mapDispatchToProps = {
+    fetchPlayersSuccess: fetchPlayersSuccess
 }
 
 const mapStateToProps = (state) => {
@@ -35,4 +65,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, null) (Players);
+export default connect(mapStateToProps, mapDispatchToProps) (Players);

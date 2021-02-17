@@ -4,7 +4,7 @@ class PlayersCard extends React.Component {
 
     render(){
         return(
-            <div>
+            
             <tr>
                 <td>{this.props.name}</td>
                 <td>{this.props.age}</td>
@@ -12,10 +12,9 @@ class PlayersCard extends React.Component {
                 <td>{this.props.goals}</td>
                 <td>{this.props.assists}</td>
                 <td>{this.props.appearances}</td>
+            
+            <button id={this.props.id} onClick={(e) => this.props.bookmarkPlayer(e)}>Bookmark Player</button>
             </tr>
-            <button>Bookmark Player</button>
-       
-        </div>
         )
     }
 }

@@ -4,8 +4,10 @@ import {connect} from 'react-redux'
 import '../Login.css';
 import { currentScout } from '../actions/auth'
 import bookmarked from '../reducers/bookmarked';
+import BookmarkedPlayer from './BookmarkedPlayer';
 
 class Bookmarked extends React.Component {
+
     componentDidMount(){
         const token = localStorage.getItem('jwt_token')
 
@@ -32,13 +34,23 @@ class Bookmarked extends React.Component {
 
     }
 
+    removeBookmarked = (e) =>{
+        const id = e.target.id
+        console.log(id)
+        fetch(`http://localhost:4000/bookmarked_players/${id}`, { method: 'DELETE'})
+        .then(() => {
+            alert("Player was deleted")
+            console.log(this.props.bookmarked.filter(b => b.id !== parseInt(id)))
+            this.props.currentScout({bookmarked_players: this.props.bookmarked.filter(b => b.id !== parseInt(id))})
+    })
+    }
+
+
     renderPlayers = () => {
-        return this.props.bookmarked.map(b => {
+            return this.props.bookmarked.map((b) => {
+            var p = this.props.players.filter(player => player.id === b.player_id)
             return (
-                <div>
-                    <h4>{b.name}</h4>
-                    <p>{b.position}</p>
-                </div>
+                <BookmarkedPlayer b={b} p={p} removeBookmarked={this.removeBookmarked}/>
             )
         })
     }
@@ -55,7 +67,8 @@ class Bookmarked extends React.Component {
 const mapStateToProps = (state) => {
     return {
         currentScout: state.currentScout,
-        bookmarked: state.bookmarked
+        bookmarked: state.bookmarked,
+        players: state.players
     }
 }
 
