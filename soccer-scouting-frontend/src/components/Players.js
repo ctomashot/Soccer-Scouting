@@ -60,6 +60,7 @@ class Players extends React.Component {
                 <th>Goals</th>
                 <th>Assists</th>
                 <th>Appearances</th>
+                <th>Clean Sheets</th>
             </tr>
             
             {

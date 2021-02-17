@@ -5,6 +5,7 @@ class TeamsCard extends React.Component {
     render(){
         return(
             <tr>
+                <td>{this.props.position}</td>
                 <td>{this.props.name}</td>
                 <td>{this.props.points}</td>
                 <td>{this.props.seasonWins_home + this.props.seasonWins_away}</td>

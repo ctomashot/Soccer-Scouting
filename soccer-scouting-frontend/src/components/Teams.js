@@ -8,6 +8,7 @@ class Teams extends React.Component {
         <div>
             <table >
             <tr>
+                <th>Position</th>
                 <th>Name</th>
                 <th>Points</th>
                 <th>Wins</th>

@@ -7,8 +7,8 @@ import { logoutScout } from '../actions/auth'
 
 class Login extends React.Component {
   state = {
-    username: 'ctomashot',
-    password: '1234',
+    username: '',
+    password: '',
     error: ''
   }
 
@@ -47,23 +47,44 @@ class Login extends React.Component {
 
   render(){
   return(
-    <div >
-      <h1>Please Log In</h1>
-      {this.state.error ? <h4 style={{color: 'red'}}>this.state.error</h4> : null}
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          <p>Username</p>
-          <input name={'username'} onChange={this.handleInputChange} value={this.state.username}/>
-        </label>
-        <label>
-          <p>Password</p>
-          <input type="password" name={'password'} onChange={this.handleInputChange} value={this.state.password}/>
-        </label>
-        <div>
-          <button type="submit">Login</button>
+
+<body id="LoginForm">
+<div class="container">
+<h1 class="form-heading"></h1>
+<div class="login-form">
+<div class="main-div">
+    <div class="panel">
+   <h2>Scout Login</h2>
+   <p>Please enter your username and password</p>
+   </div>
+    {this.state.error ? <h4 style={{color: 'red'}}>Please enter a valid Username and Password</h4> : null}
+    <form id="Login" onSubmit={this.handleSubmit}>
+
+        <div class="form-group">
+
+
+            <input type="username" placeholder= "Username" class="form-control" name={'username'} onChange={this.handleInputChange} value={this.state.username}/>
         </div>
-      </form>
-    </div>
+
+        <div class="form-group">
+
+            <input type="password" placeholder= "Password"class="form-control" name={'password'} onChange={this.handleInputChange} value={this.state.password}/>
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+<p class="botto-text"> Designed by Sunil Rajput</p>
+
+</div>
+</div>
+</div>
+</body>
+
+
+
+
   )
 }
 }

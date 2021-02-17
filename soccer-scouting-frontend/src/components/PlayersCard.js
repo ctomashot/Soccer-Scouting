@@ -12,6 +12,7 @@ class PlayersCard extends React.Component {
                 <td>{this.props.goals}</td>
                 <td>{this.props.assists}</td>
                 <td>{this.props.appearances}</td>
+                <td>{this.props.clean_sheets}</td>
             {
                 this.props.bm ? 
                 null
