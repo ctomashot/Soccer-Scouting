@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from "react-redux";
 import PlayersCard from './PlayersCard'
 import { fetchPlayersSuccess } from '../actions/players'
+import { currentScout } from '../actions/auth';
 
 
 class Players extends React.Component {
@@ -20,9 +21,27 @@ class Players extends React.Component {
     }
 
     bookmarkPlayer = (e) =>{
+        e.preventDefault()
         const id = e.target.id
-        console.log(id)
-        this.props.fetchPlayersSuccess({players: this.props.players.filter(p => p.id === parseInt(id))})
+        console.log(this.props)
+        fetch('http://localhost:4000/bookmarked_players', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                bookmarked_player: {
+                    player_id: id,
+                    scout_id: this.props.scout.id
+                }
+            })
+        })
+        .then(resp => resp.json())
+        .then(data => {
+            this.props.currentScout({bookmarked_players: [...this.props.bookmarked, data]})       
+        })            
+
+
 
 
     }
@@ -45,7 +64,13 @@ class Players extends React.Component {
             
             {
                 this.dynamicSearch().map(player => {
-                    return <PlayersCard {...player} key={player.id} bookmarkPlayer={this.bookmarkPlayer}/>
+                    let bm
+                    if(this.props.bookmarked.filter(b => b.player_id === player.id).length > 0){
+                        bm = true
+                    }else{
+                        bm = false
+                    }
+                    return <PlayersCard {...player} key={player.id} bookmarkPlayer={this.bookmarkPlayer} bm={bm}/>
                 })
             } 
             
@@ -56,12 +81,15 @@ class Players extends React.Component {
 }
 
 const mapDispatchToProps = {
-    fetchPlayersSuccess: fetchPlayersSuccess
+    fetchPlayersSuccess: fetchPlayersSuccess,
+    currentScout: currentScout
 }
 
 const mapStateToProps = (state) => {
     return {
-        players: state.players
+        players: state.players,
+        scout: state.currentScout,
+        bookmarked: state.bookmarked
     }
 }
 

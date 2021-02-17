@@ -20,13 +20,20 @@ class BookmarkedPlayer extends React.Component {
         })
     }
 
+
     handleClick = (e) => {
         const id = e.target.id
-        fetch(`http://localhost:4000/bookmarked_players/${id}`, {method: 'PATCH',
+        console.log(id)
+        fetch(`http://localhost:4000/bookmarked_players/update`, {
+        method: 'POST',
         headers: {'Content-Type': 'application/json' },
-        body: JSON.stringify({note: `${this.state.note}`})})
+        body: JSON.stringify({note: this.state.note, id: id})})
         .then(resp => resp.json())
-        .then(data => this.setState({ note: data.note }))
+        .then(data => {
+            this.setState({ note: data.note })
+            this.editNote()
+            this.props.newPlayers(data)
+        })
     }
 
 
@@ -41,8 +48,8 @@ class BookmarkedPlayer extends React.Component {
             <div key={this.props.b.id}>
                     <h4>{this.props.p[0].name}</h4>
                     <p>{this.props.p[0].position}</p>
-                    {this.state.isClicked? <input onChange={this.handleChange}></input> : <p>Scouting Note: {this.state.note}</p>}
-                    {this.state.isClicked? <button onClick={(e) => this.handleClick(e)}>Submit</button> : <button onClick={this.editNote}>Edit</button>}
+                    {this.state.isClicked? <input onChange={(e) => this.handleChange(e)}></input> : <p>Scouting Note: {this.state.note}</p>}
+                    {this.state.isClicked? <button id={this.props.b.id} onClick={(e) => this.handleClick(e)}>Submit</button> : <button onClick={this.editNote}>Edit</button>}
                     <div>
                     <button id={this.props.b.id} onClick={(e) => this.props.removeBookmarked(e)}>Remove</button>
                     </div>

@@ -36,13 +36,23 @@ class Bookmarked extends React.Component {
 
     removeBookmarked = (e) =>{
         const id = e.target.id
-        console.log(id)
         fetch(`http://localhost:4000/bookmarked_players/${id}`, { method: 'DELETE'})
         .then(() => {
             alert("Player was deleted")
-            console.log(this.props.bookmarked.filter(b => b.id !== parseInt(id)))
             this.props.currentScout({bookmarked_players: this.props.bookmarked.filter(b => b.id !== parseInt(id))})
     })
+    }
+
+    newPlayers = (bookmarkPlayer) => {
+        let bookmarked_players = this.props.bookmarked.map(bookmarked => {
+                if(bookmarkPlayer.id === bookmarked.id){
+                    return bookmarkPlayer
+                }else{
+                    return bookmarked
+                }
+            })
+        
+        this.props.currentScout({bookmarked_players: bookmarked_players})
     }
 
 
@@ -50,7 +60,7 @@ class Bookmarked extends React.Component {
             return this.props.bookmarked.map((b) => {
             var p = this.props.players.filter(player => player.id === b.player_id)
             return (
-                <BookmarkedPlayer b={b} p={p} removeBookmarked={this.removeBookmarked}/>
+                <BookmarkedPlayer b={b} p={p} removeBookmarked={this.removeBookmarked} newPlayers={this.newPlayers}/>
             )
         })
     }
