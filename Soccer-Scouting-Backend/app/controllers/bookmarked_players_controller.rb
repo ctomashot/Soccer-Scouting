@@ -11,7 +11,7 @@ class BookmarkedPlayersController < ApplicationController
   
     def update
       bookmarked_player = BookmarkedPlayer.find(params[:id])
-      bookmarked_player.update_attributes(bookmarked_player_param)
+      bookmarked_player.update(note: params[:note])
       render json: bookmarked_player
     end
   
