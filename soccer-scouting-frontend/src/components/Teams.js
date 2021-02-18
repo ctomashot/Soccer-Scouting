@@ -15,6 +15,7 @@ class Teams extends React.Component {
                 <th>Draws</th>
                 <th>Losses</th>
                 <th>Matches Played</th>
+                <th>Total Goals</th>
             </tr>
            
             {

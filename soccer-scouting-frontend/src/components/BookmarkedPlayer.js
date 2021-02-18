@@ -53,6 +53,9 @@ class BookmarkedPlayer extends React.Component {
                     <p>Assists: {this.props.p[0].assists}</p>
                     <p>Appearances: {this.props.p[0].appearances}</p>
                     <p>Clean Sheets: {this.props.p[0].clean_sheets}</p>
+                    <p>Yellow Cards: {this.props.p[0].yellow_cards}</p>
+                    <p>Red Cards: {this.props.p[0].red_cards}</p>
+                    <p>Goals Conceded: {this.props.p[0].conceded}</p>
 
                     {this.state.isClicked? <input onChange={(e) => this.handleChange(e)}></input> : <p>Scouting Note: {this.state.note}</p>}
                     {this.state.isClicked? <button id={this.props.b.id} onClick={(e) => this.handleClick(e)}>Submit</button> : <button onClick={this.editNote}>Edit</button>}

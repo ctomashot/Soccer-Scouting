@@ -12,6 +12,7 @@ class TeamsCard extends React.Component {
                 <td>{this.props.seasonDraws_home + this.props.seasonDraws_away}</td>
                 <td>{this.props.seasonLosses_home + this.props.seasonLosses_away}</td>
                 <td>{this.props.matchesPlayed}</td>
+                <td>{this.props.seasonGoals}</td>
       
         </tr>
         )

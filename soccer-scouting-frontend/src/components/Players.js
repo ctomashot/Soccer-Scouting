@@ -50,7 +50,7 @@ class Players extends React.Component {
 
     render(){
     return(
-        <div>
+        <div class="topnav">
             <input type="text" placeholder= "Search Player Names" value ={this.state.inputValue} onChange={this.playerFilterOnChange}></input>
             <table>
             <tr>

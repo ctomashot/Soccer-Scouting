@@ -33,6 +33,7 @@
   border-collapse: collapse;
   table-layout: fixed ;
   width: 90%;
+  margin: 5; padding: 5;
 }
 
 table {
@@ -52,6 +53,17 @@ td {
 
 .wrapper {
   padding: 20px;
+}
+
+.topnav input[type=text] {
+  display: block;
+  padding: 6px;
+  border: 1px solid black;
+  margin-top: 1px;
+  margin-right: 1px;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
 }
 
 

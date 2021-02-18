@@ -68,7 +68,7 @@ class Bookmarked extends React.Component {
     render(){
     return(
         <div>
-            <h1>Your Players</h1>
+            <h2>Your Players</h2>
             {this.renderPlayers()}
         </div>
     )}
