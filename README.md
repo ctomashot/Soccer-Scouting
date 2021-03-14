@@ -1,7 +1,7 @@
 # Soccer-Scouting
 
 Link to Demo Video
-https://youtu.be/rMW-a3ftwqE
+
 
 **Soccer Scouting**
 
