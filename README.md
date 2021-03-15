@@ -1,6 +1,6 @@
 # Soccer-Scouting
 
-Link to Demo Video
+Link to Demo Video: https://drive.google.com/file/d/1WVlPvyAMnO1T_dwBEfot2fNG11N3KJDu/view?usp=sharing
 
 
 **Soccer Scouting**
