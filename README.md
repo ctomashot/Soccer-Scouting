@@ -33,6 +33,6 @@ Soccer Scouting, a React App allowing users to compare different players’ stat
 * Run rails s -p 4000 on back end
 * Run npm start on front end
 
-**Authors**
+**Author**
 
 Cole Tomashot
