@@ -40,4 +40,4 @@ Soccer Scouting, a React App allowing users to compare different players’ stat
 
 **Author**
 
-Cole Tomashot
+James (Cole) Tomashot
