@@ -37,6 +37,7 @@ Soccer Scouting, a React App allowing users to compare different players’ stat
 
 * Add more leagues and players to the app
 * Create a more interactive teams section
+* Include more player stats
 
 **Author**
 
